@@ -41,23 +41,20 @@ namespace ComplexAlgebra
 
         public override string ToString()
         {
-            return Real + "." + Imaginary;
+            return Real + "+ (i" + Imaginary +")";
         }
 
-        public double Moduls
-        {
-            get
-            {
-                return Real * Real + Imaginary * Imaginary;
-            }
-        }
+        public double Modulus => Math.Sqrt(Real * Real + Imaginary * Imaginary);
 
-        public double Phase
+        public double Phase => Math.Atan2(Imaginary, Real);
+
+        public Complex Minus(Complex m)
         {
-            get
-            {
-                return Math.Atan(Imaginary/Real);
-            }
+            return new Complex(Real - m.Real, Imaginary - m.Imaginary);
+        }
+        public bool Equals(Complex c)
+        {
+            return (Real == c.Real && Imaginary == c.Imaginary);
         }
 
     }
