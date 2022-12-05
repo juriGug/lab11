@@ -22,7 +22,7 @@ namespace Properties
         public IList<string> Name
         {
             get => this._names.ToList();
-            set => this._seeds = value.ToArray();
+            set => this._names = value.ToArray();
         }
 
         // TODO improve

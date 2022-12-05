@@ -43,7 +43,7 @@ namespace Properties
         public override bool Equals(object obj)
         {
             Card c = obj as Card;
-            return (Seed == c.Seed && Name == c.Name && Ordinal == c.Ordinal);
+            return (string.Equals(Seed, c.Seed) && string.Equals(Name, c.Name) && Ordinal == c.Ordinal);
         }
         // TODO generate GetHashCode()
         public override int GetHashCode() {
