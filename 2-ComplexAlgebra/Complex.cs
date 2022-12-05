@@ -1,3 +1,4 @@
+using System;
 namespace ComplexAlgebra
 {
     /// <summary>
@@ -18,5 +19,46 @@ namespace ComplexAlgebra
     public class Complex
     {
         // TODO: fill this class\
+
+        public double Real { get; set;}
+        public double Imaginary { get; set;}
+
+        public Complex(double real, double imm)
+        {
+            this.Real = real;
+            this.Imaginary = imm;
+        }
+
+        public Complex Complement()
+        {
+            return new Complex(this.Real, -(this.Imaginary) );
+        }
+
+        public Complex Plus(Complex i)
+        {
+            return new Complex(Real + i.Real, Imaginary + i.Imaginary);
+        }
+
+        public override string ToString()
+        {
+            return Real + "." + Imaginary;
+        }
+
+        public double Moduls
+        {
+            get
+            {
+                return Real * Real + Imaginary * Imaginary;
+            }
+        }
+
+        public double Phase
+        {
+            get
+            {
+                return Math.Atan(Imaginary/Real);
+            }
+        }
+
     }
 }
